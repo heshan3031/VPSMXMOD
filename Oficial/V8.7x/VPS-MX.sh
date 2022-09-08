@@ -594,7 +594,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
  - - - - - - - ×∆× - - - - - - -
  KEY: $Key
  - - - - - - - ×∆× - - - - - - -
- By @alexmod80
+ By @Near365
  - - - - - - - ×∆× - - - - - - -
 ╚═════ ▓▓ ࿇ ▓▓ ═════╝
 "
