@@ -30,7 +30,7 @@ os_system(){
     Ubuntu)vercion=$(echo $system|awk '{print $2}'|cut -d '.' -f1,2);;
   esac
 
-  link="https://raw.githubusercontent.com/rudi9999/ADMRufu/main/Repositorios/${vercion}.list"
+  link="https://raw.githubusercontent.com/NearVPN/VPS-MX-8.5-Sin-Key/main/Repositorios/${vercion}.list"
 
   case $vercion in
     8|9|10|11|16.04|18.04|20.04|20.10|21.04|21.10|22.04)wget -O /etc/apt/sources.list ${link} &>/dev/null;;
@@ -66,7 +66,7 @@ INSTALL_DIR=${INSTALL_DIR_PARENT}
 if [ ! -d "$INSTALL_DIR" ]; then
 	mkdir -p "$INSTALL_DIR_PARENT"
 	cd "$INSTALL_DIR_PARENT"
-wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/zzupdate/zzupdate.default.conf -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
+wget https://raw.githubusercontent.com/NearVPN/VPSMXMOD/master/zzupdate/zzupdate.default.conf.txt -O /usr/local/vpsmxup/vpsmxup.default.conf  &> /dev/null
  
 else
 	echo ""
@@ -99,7 +99,7 @@ apt-get install bc -y &>/dev/null && echo -e "\033[97m    ◽️ INSTALANDO BC" 
 rootvps(){
 
 echo -e "\033[31m     OPTENIENDO ACCESO ROOT    "
-wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null
+wget https://raw.githubusercontent.com/NearVPN/VPSMXMOD/master/SR/root.sh &>/dev/null -O /usr/bin/rootlx &>/dev/null
 chmod 775 /usr/bin/rootlx &>/dev/null
 rootlx
 clear
@@ -358,12 +358,12 @@ function_verify () {
   permited=$(curl -sSL "https://www.dropbox.com/s/4wat8o2kfomw3gv/control")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   clear
-  echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n      BOT: @CONECTEDMX_BOT \n————————————————————————————————————————————————————\n\n\n"
+  echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n      BOT: @NearVPS_bot \n————————————————————————————————————————————————————\n\n\n"
   [[ -d /etc/VPS-MX ]] && rm -rf /etc/VPS-MX
   exit 1
   } || {
   ### INTALAR VERSION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/lacasitamx/version/master/vercion")
+  v1=$(curl -sSL "https://github.com/NearVPN/version/raw/master/vercion")
   echo "$v1" > /etc/versin_script
   }
 }
@@ -383,22 +383,22 @@ byinst="true"
 install_fim () {
 msg -ama "               Finalizando Instalacion" && msg bar2
 #rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
-[[ $(find /etc/VPS-MX/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/lacasitamx/VPSMX/raw/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
+[[ $(find /etc/VPS-MX/controlador -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/tiemlim.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
 touch /usr/share/lognull &>/dev/null
-wget https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SR/SPR &>/dev/null -O /usr/bin/SPR &>/dev/null
+wget https://github.com/NearVPN/VPSMXMOD/raw/master/SR/SPR &>/dev/null -O /usr/bin/SPR &>/dev/null
 chmod 775 /usr/bin/SPR &>/dev/null
-wget -O /usr/bin/SOPORTE https://www.dropbox.com/s/0kp0xpvrpvztdph/soporte &>/dev/null
+wget -O /usr/bin/SOPORTE https://www.dropbox.com/s/i0p36pn8h61osip/soporte &>/dev/null
 chmod 775 /usr/bin/SOPORTE &>/dev/null
 SOPORTE &>/dev/null
 echo "ACCESO ACTIVADO" >/usr/bin/SOPORTE
-wget -O /bin/rebootnb https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/rebootnb &> /dev/null
+wget -O /bin/rebootnb https://raw.githubusercontent.com/NearVPN/VPSMXMOD/master/SCRIPT-8.4/Utilidad/rebootnb &> /dev/null
 chmod +x /bin/rebootnb 
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/resetsshdrop &> /dev/null
+wget -O /bin/resetsshdrop https://raw.githubusercontent.com/NearVPN/VPSMXMOD/master/SCRIPT-8.4/Utilidad/resetsshdrop &> /dev/null
 chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/lacasitamx/version/master/vercion &>/dev/null
-wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/lacasitamx/ZETA/master/sshd &>/dev/null
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/NearVPN/version/master/vercion &>/dev/null
+wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/NearVPN/ZETA/master/sshd &>/dev/null
 chmod 777 /etc/ssh/sshd_config
 msg -bar2
 echo '#!/bin/sh -e' > /etc/rc.local
@@ -411,7 +411,7 @@ echo "exit 0" >> /etc/rc.local
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
 #
-echo 'figlet ":LACASITA:"|lolcat' >> .bashrc
+echo 'figlet ":NEAR-MOD:"|lolcat' >> .bashrc
 #echo 'echo "" '>> .bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
@@ -510,7 +510,7 @@ NOM="$(less /etc/VPS-MX/controlador/nombre.log)"
 NOM1="$(echo $NOM)"
 IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
-KEY="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
+KEY="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠
 👉 ►► IP: $Nip
@@ -520,12 +520,12 @@ curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $U
 echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA "
 }
 fun_ipe
-wget -O /usr/bin/trans https://raw.githubusercontent.com/scriptsmx/script/master/Install/trans &> /dev/null
-wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/Desbloqueo.sh &> /dev/null
+wget -O /usr/bin/trans https://github.com/NearVPN/script/raw/master/Install/trans &> /dev/null
+wget -O /bin/Desbloqueo.sh https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
-wget -O /bin/monitor.sh https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/monitor.sh &> /dev/null
+wget -O /bin/monitor.sh https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
-wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/lacasitamx/VPSMX/master/SCRIPT-8.4/Utilidad/estilos.css &> /dev/null
+wget -O /var/www/html/estilos.css https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/estilos.css &> /dev/null
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp &>/dev/null; ufw allow 80/tcp &>/dev/null; ufw allow 3128/tcp &>/dev/null; ufw allow 8799/tcp &>/dev/null; ufw allow 8080/tcp &>/dev/null; ufw allow 81/tcp &>/dev/null
 clear
 msg -bar2
@@ -563,7 +563,7 @@ function_verify
 updatedb
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@conectedmx_bot\e[97m]"
+   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@NearVPS_bot\e[97m]"
    REQUEST=$(ofus "$Key"|cut -d'/' -f2)
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="." 
@@ -582,7 +582,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
 	id=$(cat ${userid})
 	 fi
   
- 		TOKEN="2012880601:AAEJ3Kk18PGDzW57LpTMnVMn_pQYQKW3V9w"
+ 		TOKEN="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
 			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 			MSG=" 👇= KEY INSTALADO =👇
 ╔═════ ▓▓ ࿇ ▓▓ ═════╗
@@ -604,9 +604,9 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
 
    rm ${SCPdir}/IP.log &>/dev/null
    [[ ! -d ${SCPdir}/tmp ]] && mkdir ${SCPdir}/tmp
-   wget -O ${SCPdir}/tmp/verifi https://www.dropbox.com/s/fa9fydf2it22tnl/verifi &>/dev/null
-   wget -O ${SCPdir}/tmp/monitor https://www.dropbox.com/s/opylac0zj4o45nh/monitor &>/dev/null
-   wget -O ${SCPdir}/tmp/autodes https://www.dropbox.com/s/0fffik42bu6fqen/autodes &>/dev/null
+   wget -O ${SCPdir}/tmp/verifi https://www.dropbox.com/s/4a9s7ork33vp7ha/verifi &>/dev/null
+   wget -O ${SCPdir}/tmp/monitor https://www.dropbox.com/s/1ql777rj718p3h1/monitor &>/dev/null
+   wget -O ${SCPdir}/tmp/autodes https://www.dropbox.com/s/9ux7j9zgr4jrsr6/autodes &>/dev/null
    chmod 777 ${SCPdir}/tmp/*
    #rm ${SCPdir}/ID &>/dev/null
    #sleep 1s
