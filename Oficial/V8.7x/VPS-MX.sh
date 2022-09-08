@@ -57,7 +57,7 @@ echo -ne "  \033[1;33m[\033[1;31m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[1;
 sleep 1s
 }
 msg -bar2
-echo -e " \e[97m\033[1;41m   =====>>►►  SCRIPT MOD LACASITAMX  ◄◄<<=====      \033[1;37m"
+echo -e " \e[97m\033[1;41m   [----► NEAR SCRIPT•MOD ◄----]      \033[1;37m"
 msg -bar2
 msg -ama "               PREPARANDO INSTALACION"
 msg -bar2
@@ -165,7 +165,7 @@ clear
 #msg -bar2
 # PAQUETES PRINCIPALES 
 msg -bar2
-msg -ama "     [ SCRIPT \033[1;97m MOD LACASITAMX\033[1;33m ]"
+msg -ama "     [ \033[1;97m [----► NEAR SCRIPT•MOD ◄----]\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
 echo -e "  \033[41m    -- INSTALACION DE PAQUETES  --    \e[49m"
@@ -373,7 +373,7 @@ clear
 clear
 msg -bar2
 msg -bar2
-figlet " LACASITA" | lolcat 
+figlet " NEAR-MOD" | lolcat 
 echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
 msg -bar2
 pv="$(echo es)"
@@ -485,7 +485,7 @@ clear
 msg -bar
 #msg -ama "     [ VPS - MX - SCRIPT \033[1;97m MOD \033[1;33m ]"
 #msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)|@LaCasitaMx_Noty_Bot "
+msg -ama " Notify-BOT (Notificasion Remota)|@NearVPS_bot "
 msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
@@ -529,7 +529,7 @@ wget -O /var/www/html/estilos.css https://github.com/NearVPN/VPSMXMOD/raw/master
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp &>/dev/null; ufw allow 80/tcp &>/dev/null; ufw allow 3128/tcp &>/dev/null; ufw allow 8799/tcp &>/dev/null; ufw allow 8080/tcp &>/dev/null; ufw allow 81/tcp &>/dev/null
 clear
 msg -bar2
-msg -ama "     [ SCRIPT \033[1;97m  MOD LACASITAMX\033[1;33m ]"
+msg -ama "     [ \033[1;97m  [----► NEAR SCRIPT•MOD ◄----]\033[1;33m ]"
 msg -ama "  \033[1;96m      🔰Usar Ubuntu 20 a 64 De Preferencia🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
