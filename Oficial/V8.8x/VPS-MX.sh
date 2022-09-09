@@ -57,7 +57,7 @@ echo -ne "  \033[1;33m[\033[1;31m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[1;
 sleep 1s
 }
 msg -bar2
-echo -e " \e[97m\033[1;41m      [----► NEAR SCRIPT•MOD ◄----]      \033[1;37m"
+echo -e " \e[97m\033[1;41m     [----► NEAR SCRIPT•MOD ◄----]      \033[1;37m"
 msg -bar2
 msg -ama "               PREPARANDO INSTALACION"
 msg -bar2
@@ -632,12 +632,12 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
    REBOOT=1
 REBOOT_TIMEOUT=10
 if [ "$REBOOT" = "1" ]; then
-echo -e "	\e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
+echo print_center -ama "	\e[1;97m\e[1;100mREINICIANDO VPS EN $REBOOT_TIMEOUT SEGUNDOS\e[0m"
 while [ $REBOOT_TIMEOUT -gt 0 ]; do
-msg -ne "	-$REBOOT_TIMEOUT-"
-sleep 1
-: $((REBOOT_TIMEOUT--))
-done
+    print_center -ne "-$REBOOT_TIMEOUT-\r"
+    sleep 1
+    : $((REBOOT_TIMEOUT--))
+  done
 reboot
 fi
 else
