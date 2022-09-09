@@ -632,12 +632,12 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
    REBOOT=1
 REBOOT_TIMEOUT=10
 if [ "$REBOOT" = "1" ]; then
-echo print_center -ama "	\e[1;97m\e[1;100mREINICIANDO VPS EN $REBOOT_TIMEOUT SEGUNDOS\e[0m"
+echo -e "	\e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
 while [ $REBOOT_TIMEOUT -gt 0 ]; do
-    print_center -ne "-$REBOOT_TIMEOUT-\r"
-    sleep 1
-    : $((REBOOT_TIMEOUT--))
-  done
+msg -ne "	-$REBOOT_TIMEOUT-"
+sleep 1
+: $((REBOOT_TIMEOUT--))
+done
 reboot
 fi
 else
