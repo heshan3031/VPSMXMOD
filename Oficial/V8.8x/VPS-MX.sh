@@ -57,7 +57,7 @@ echo -ne "  \033[1;33m[\033[1;31m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[1;
 sleep 1s
 }
 msg -bar2
-echo -e " \e[97m\033[1;41m   [----► NEAR SCRIPT•MOD ◄----]      \033[1;37m"
+echo -e " \e[97m\033[1;41m.            [----► NEAR SCRIPT•MOD ◄----]      \033[1;37m"
 msg -bar2
 msg -ama "               PREPARANDO INSTALACION"
 msg -bar2
@@ -165,7 +165,7 @@ clear
 #msg -bar2
 # PAQUETES PRINCIPALES 
 msg -bar2
-msg -ama "     [ \033[1;97m [----► NEAR SCRIPT•MOD ◄----]\033[1;33m ]"
+msg -ama "[ \033[1;97m [----► NEAR SCRIPT•MOD ◄----]\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
 echo -e "  \033[41m    -- INSTALACION DE PAQUETES  --    \e[49m"
