@@ -444,7 +444,7 @@ echo 'echo "" '>> .bashrc
 echo 'echo -e "\t\033[97mPARA MOSTAR PANEL ESCRIBA: menu "'>> .bashrc
 
 echo 'echo ""'>> .bashrc
-echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+echo -e "       COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
 echo -e "                     \033[1;41m menu \033[0;37m" && msg -bar2
 rm -rf /usr/bin/pytransform &> /dev/null
 rm -rf VPS-MX.sh
@@ -655,7 +655,7 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
    REBOOT=1
 REBOOT_TIMEOUT=10
 if [ "$REBOOT" = "1" ]; then
-echo -e "	\e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
+echo -e "	          \e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
 while [ $REBOOT_TIMEOUT -gt 0 ]; do
 print_center -ne "-$REBOOT_TIMEOUT-\r"
 sleep 1
