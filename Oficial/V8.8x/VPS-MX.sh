@@ -445,7 +445,7 @@ echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo menu "'>> .bashrc
 
 echo 'echo ""'>> .bashrc
 echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-echo -e "  \033[1;41m               sudo menu             \033[0;37m" && msg -bar2
+echo -e "  \033[1;41m         sudo menu       \033[0;37m" && msg -bar2
 rm -rf /usr/bin/pytransform &> /dev/null
 rm -rf VPS-MX.sh
 rm -rf lista-arq
