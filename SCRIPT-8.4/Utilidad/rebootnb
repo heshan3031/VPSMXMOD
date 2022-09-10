@@ -3,7 +3,7 @@ NOM="$(less /etc/VPS-MX/controlador/nombre.log)"
 NOM1="$(echo $NOM)"
 IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
+KEY="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ VPS REINICIADA ❗️
