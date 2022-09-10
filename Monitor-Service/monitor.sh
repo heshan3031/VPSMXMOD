@@ -22,7 +22,7 @@ NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="1647061408:AAEXJ5T1mC0taDP6lQCd-Hl-eY7vIn9iR14"
+KEY="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️Protocolo $1 con fallo / Reiniciando❗️"
@@ -40,11 +40,11 @@ echo "
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <title>Monitor de Servicios VPS-MX</title>
+  <title>Monitor de Servicios NEAR-MOD</title>
   <link rel='stylesheet' href='estilos.css'>
 </head>
 <body>
-<h1>Monitor de Servicios By @Kalix1</h1>
+<h1>Monitor de Servicios By @Near365</h1>
 <p id='ultact'>Última actualización: $FECHA</p>
 <hr>
 " > $DIR/$ARCHIVO
@@ -75,7 +75,7 @@ NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="1647061408:AAEXJ5T1mC0taDP6lQCd-Hl-eY7vIn9iR14"
+KEY="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ Reiniciando BadVPN ❗️"
@@ -97,7 +97,7 @@ NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="1647061408:AAEXJ5T1mC0taDP6lQCd-Hl-eY7vIn9iR14"
+KEY="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ Reiniciando Proxy-PhytonDirecto: $port ❗️ "
