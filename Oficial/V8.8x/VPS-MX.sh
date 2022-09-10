@@ -546,7 +546,7 @@ fun_ipe
 wget -O /usr/bin/trans https://github.com/NearVPN/script/raw/master/Install/trans &> /dev/null
 wget -O /bin/Desbloqueo.sh https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
-wget -O /bin/monitor.sh https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/monitor.sh &> /dev/null
+wget -O /bin/monitor.sh https://github.com/NearVPN/VPSMXMOD/raw/master/Monitor-Service/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/estilos.css &> /dev/null
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp &>/dev/null; ufw allow 80/tcp &>/dev/null; ufw allow 3128/tcp &>/dev/null; ufw allow 8799/tcp &>/dev/null; ufw allow 8080/tcp &>/dev/null; ufw allow 81/tcp &>/dev/null
