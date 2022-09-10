@@ -508,7 +508,7 @@ clear
 msg -bar
 #msg -ama "     [ VPS - MX - SCRIPT \033[1;97m MOD \033[1;33m ]"
 #msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)|@NearVPS_bot "
+msg -ama " Notify-BOT (Notificasion Remota)|@NearMod_Noty_bot "
 msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
@@ -516,8 +516,8 @@ echo -e "\033[1;94m >> Usuario Eliminado"
 echo -e "\033[1;94m >> Avisos de VPS Reiniciada"
 echo -e "\033[1;94m >> Avisos de Monitor de Protocolos"
 echo -e "\033[1;97m Inicie El BOT de Telegram"
-echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @conectedmx_bot"
-echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564   "
+echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @NearVPS_bot"
+echo -e "\033[1;92m Aparecerá algo parecido 👤 → Tu ID es: 45145564   "
 msg -bar
 echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
 echo "${nombr}" > /etc/VPS-MX/controlador/nombre.log
@@ -533,7 +533,7 @@ NOM="$(less /etc/VPS-MX/controlador/nombre.log)"
 NOM1="$(echo $NOM)"
 IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
-KEY="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
+KEY="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠
 👉 ►► IP: $Nip
