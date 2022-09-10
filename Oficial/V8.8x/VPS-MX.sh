@@ -605,7 +605,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
 	id=$(cat ${userid})
 	 fi
   
- 		TOKEN="5599611307:AAFirXjFGquAS2bCfJbrabbSruSY5x9LkWE"
+ 		TOKEN="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
 			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 			MSG=" 👇= KEY INSTALADO =👇
 ╔═════ ▓▓ ࿇ ▓▓ ═════╗
@@ -655,7 +655,7 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
    REBOOT=1
 REBOOT_TIMEOUT=10
 if [ "$REBOOT" = "1" ]; then
-echo -e "	     \e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
+echo -e "	    \e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
 while [ $REBOOT_TIMEOUT -gt 0 ]; do
 print_center -ne "-$REBOOT_TIMEOUT-\r"
 sleep 1
