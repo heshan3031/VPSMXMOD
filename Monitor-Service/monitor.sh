@@ -22,7 +22,7 @@ NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
-KEY="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
+KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️Protocolo $1 con fallo / Reiniciando❗️"
@@ -40,11 +40,11 @@ echo "
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <title>Monitor de Servicios @NearMod_Noty_bot</title>
+  <title>Monitor de Servicios @notidansmxbot</title>
   <link rel='stylesheet' href='estilos.css'>
 </head>
 <body>
-<h1>Monitor de Servicios By @NearMod_Noty_bot</h1>
+<h1>Monitor de Servicios By @notidansmxbot</h1>
 <p id='ultact'>Última actualización: $FECHA</p>
 <hr>
 " > $DIR/$ARCHIVO
@@ -75,7 +75,7 @@ NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
-KEY="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
+KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ Reiniciando BadVPN ❗️"
@@ -97,7 +97,7 @@ NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
-KEY="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
+KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ Reiniciando Proxy-PhytonDirecto: $port ❗️ "
