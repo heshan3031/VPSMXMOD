@@ -7,5 +7,5 @@ KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ VPS REINICIADA ❗️
-🔰 INICIO EXITOSO 🔰 "
+🌵 INICIO EXITOSO 🌵 "
 curl -s --max-time 10 -d "chat_id=$IDB1&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
