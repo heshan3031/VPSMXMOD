@@ -24,7 +24,7 @@ IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
 KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
+MSG="🌮 AVISO DE VPS: $NOM1 🌮
 ❗️Protocolo $1 con fallo / Reiniciando❗️"
 curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL
 		
@@ -77,7 +77,7 @@ IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
 KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
+MSG="🌵 AVISO DE VPS: $NOM1 🌵
 ❗️ Reiniciando BadVPN ❗️"
 curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL
 else
@@ -99,7 +99,7 @@ IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
 KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
+MSG="🇲🇽 AVISO DE VPS: $NOM1 🇲🇽
 ❗️ Reiniciando Proxy-PhytonDirecto: $port ❗️ "
 curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL
 else
