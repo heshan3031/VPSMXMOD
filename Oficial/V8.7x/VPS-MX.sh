@@ -1,6 +1,8 @@
 #!/bin/bash
 
 clear
+apt install lolcat -y &>/dev/null
+apt install figlet -y &>/dev/null
 if [ `whoami` != 'root' ]
 	then 
      echo -e "\e[1;31mPARA PODER USAR EL INSTALADOR ES NECESARIO SER ROOT\nAUN NO SABES COMO INICAR COMO ROOT?\nDIJITA ESTE COMANDO EN TU TERMINAL ( sudo -i )\e[0m" 
