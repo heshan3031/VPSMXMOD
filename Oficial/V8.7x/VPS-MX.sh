@@ -333,8 +333,8 @@ clear && clear
   msg -bar
   figlet "ADM-KEY" | lolcat 
   msg -bar
-  print_center -azu "POR FAVOR INTRODUCE UNA KEY VALIDA ABAJO"|lolcat
-print_center -azu "Necesitas una key contacta a @DansBotMx"|lolcat
+  echo -e "\033[1;97m POR FAVOR INTRODUCE UNA KEY VALIDA ABAJO"|lolcat
+  echo -e "\033[1;97m Necesitas una key contacta a @DansBotMx"|lolcat
   echo ''
   echo -ne "${verde}╰═════•➤${tag} ";
   read key
