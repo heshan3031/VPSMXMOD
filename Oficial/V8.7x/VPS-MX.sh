@@ -9,6 +9,8 @@ if [ `whoami` != 'root' ]
      rm *
      exit 
 fi
+tag="\033[0m"
+url='https://raw.githubusercontent.com/heshan3031/botsshzap/main/key'
 msg () {
 BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
 AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCOR='\e[0m'
@@ -340,7 +342,7 @@ print_center -azu "Necesitas una key contacta a @DansBotMx"|lolcat
   
   msg -ne "    # Verificando Key # : "
   
-[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && echo -e "\033[1;32m Ofus Correcto" {
+[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && echo -e "\033[1;32m Ofus Correcto" || {
   sleep 3s
   echo -e "${red}Code Invalido -- #¡Key Invalida#!${tag}"
   exit 1
