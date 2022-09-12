@@ -324,7 +324,28 @@ sleep 7s
 clear
 }
 clear
+
+clear && clear
+  msg -bar
+  figlet "ADM-KEY" | lolcat 
+  msg -bar
+  print_center -azu "POR FAVOR INTRODUCE UNA KEY VALIDA ABAJO"|lolcat
+print_center -azu "Necesitas una key contacta a @DansBotMx"|lolcat
+  echo ''
+  echo -ne "${verde}╰═════•➤${tag} ";
+  read key
+  tput cuu1 && tput dl1
+  done
+  msg -ne "    # Verificando Key # : "
+  
+[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && echo -e "\033[1;32m Ofus Correcto" {
+  sleep 3s
+  echo -e "${red}Code Invalido -- #¡Key Invalida#!${tag}"
+  exit 1
+}
+
 clear
+
 msg -bar2
 #msg -ama "     [ VPS - MX - SCRIPT \033[1;97m  MOD \033[1;33m ]"
 figlet "Bienvenido" | lolcat 
@@ -396,7 +417,7 @@ cd
 [[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
 msg -ama "               Estamos Finalizando la Instalación" && msg bar2
 install_fim () {
-msg -ama "               Hemos Finalizando Instalacion" && msg bar2
+msg -ama "             Hemos Finalizando Instalacion" && msg bar2
 #rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
