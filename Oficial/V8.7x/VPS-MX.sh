@@ -339,9 +339,9 @@ clear && clear
   echo -ne "${verde}╰═════•➤${tag} ";
   read key
   
-[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && echo -e "\033[1;32m Ofus Correcto" || {
+[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && {
   sleep 3s
-  echo -e "${red}Code Invalido -- #¡Key Invalida#!${tag}"
+  echo -e "${red}Code Invalido -- Key Invalida${tag}"
   exit 1
 }
 
