@@ -338,9 +338,6 @@ print_center -azu "Necesitas una key contacta a @DansBotMx"|lolcat
   echo ''
   echo -ne "${verde}╰═════•➤${tag} ";
   read key
-  tput cuu1 && tput dl1
-  
-  msg -ne "    # Verificando Key # : "
   
 [[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && echo -e "\033[1;32m Ofus Correcto" || {
   sleep 3s
