@@ -604,3 +604,5 @@ done
 reboot
 fi
 rm -rf VPS-MX.sh lista-arq
+fi
+rm -rf VPS-MX.sh lista-arq
