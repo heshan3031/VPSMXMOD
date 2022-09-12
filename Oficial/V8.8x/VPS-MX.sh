@@ -20,29 +20,6 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
   "-bar2"|"-bar")cor="${VERMELHO}————————————————————————————————————————————————————" && echo -e "${SEMCOR}${cor}${SEMCOR}";;
  esac
 }
-print_center() {
-  if [[ -z $2 ]]; then
-    text="$1"
-  else
-    col="$1"
-    text="$2"
-  fi
-
-  while read line; do
-    unset space
-    x=$(((54 - ${#line}) / 2))
-    for ((i = 0; i < $x; i++)); do
-      space+=' '
-    done
-    space+="$line"
-    if [[ -z $2 ]]; then
-      msg -azu "$space"
-    else
-      msg "$col" "$space"
-    fi
-  done <<<$(echo -e "$text")
-}
-
 os_system(){
 #code by rufu99
   system=$(cat -n /etc/issue |grep 1 |cut -d ' ' -f6,7,8 |sed 's/1//' |sed 's/      //')
@@ -80,7 +57,7 @@ echo -ne "  \033[1;33m[\033[1;31m>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[1;
 sleep 1s
 }
 msg -bar2
-echo -e "     \e[97m\033[1;41m     [----► NEAR SCRIPT•MOD ◄----]      \033[1;37m"
+echo -e " \e[97m\033[1;41m   [----► DANSMX SCRIPT•MOD ◄----]      \033[1;37m"
 msg -bar2
 msg -ama "               PREPARANDO INSTALACION"
 msg -bar2
@@ -188,7 +165,7 @@ clear
 #msg -bar2
 # PAQUETES PRINCIPALES 
 msg -bar2
-msg -ama "       \033[1;97m [----► NEAR SCRIPT•MOD ◄----]\033[1;33m "
+msg -ama "     [ \033[1;97m [----► DANSMX SCRIPT•MOD ◄----]\033[1;33m ]"
 msg -bar
 echo -e "\033[97m"
 echo -e "  \033[41m    -- INSTALACION DE PAQUETES  --    \e[49m"
@@ -301,7 +278,7 @@ service apache2 restart > /dev/null 2>&1
 echo -e "\033[97m    # apt-get install apache2......... $ESTATUS "
 msg -bar2
 
-#read -t 20 -n 1 -rsp $'\033[1;39m Preciona Enter Para continuar\n'
+read -t 20 -n 1 -rsp $'\033[1;39m Por Favor Preciona Enter Para continuar\n'
 clear
 ### FIXEADOR PARA SISTEMAS 86_64
 idfix64_86 () {
@@ -350,61 +327,76 @@ clear
 clear
 msg -bar2
 #msg -ama "     [ VPS - MX - SCRIPT \033[1;97m  MOD \033[1;33m ]"
+figlet "Bienvenido" | lolcat 
 #msg -bar2
 echo -e "\033[1;97m  ¿PRECENTO ALGUN ERROR ALGUN PAQUETE ANTERIOR?" 
 msg -bar2
 echo -e "\033[1;32m 1- Escoja:(N) No. Para Instalacion Normal"
 echo -e "\033[1;31m 2- Escoja:(S) Si. Saltaron errores."
 msg -bar2
-echo -e "\033[1;39m Al preciona enter continuara la instalacion Normal"
+echo -e "\033[1;39m Al precionar enter continuara la instalacion Normal"
 msg -bar2
 read -p " [ S | N ]: " idfix64_86   
 [[ "$idfix64_86" = "s" || "$idfix64_86" = "S" ]] && idfix64_86
 clear
-fun_ipe () {
-MIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
-MIP2=$(wget -qO- ifconfig.me)
-[[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
-}  
-fun_ip () {
-MIP2=$(wget -qO- ifconfig.me)
-
-MIP=$(wget -qO- whatismyip.akamai.com)
-if [ $? -eq 0 ]; then
-   IP="$MIP"
-else
-   IP="$MIP2"
-fi
-
-}  
-function_verify () {
-  permited=$(curl -sSL "https://www.dropbox.com/s/4wat8o2kfomw3gv/control")
-  [[ $(echo $permited|grep "${IP}") = "" ]] && {
-  clear
-  echo -e "\n\n\n\033[1;91m————————————————————————————————————————————————————\n      ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR! \n      BOT: @NearVPS_bot \n————————————————————————————————————————————————————\n\n\n"
-  [[ -d /etc/VPS-MX ]] && rm -rf /etc/VPS-MX
-  exit 1
-  } || {
-  ### INTALAR VERSION DE SCRIPT
-  v1=$(curl -sSL "https://github.com/NearVPN/version/raw/master/vercion")
-  echo "$v1" > /etc/versin_script
-  }
-}
 
 funcao_idioma () {
 clear
 clear
 msg -bar2
 msg -bar2
-figlet " NEAR-MOD" | lolcat 
+figlet " NOTY-BOT" | lolcat 
 echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
 msg -bar2
 pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
 byinst="true"
 }
+clear && clear
+  msg -bar
+  msg -bar
+  figlet " SLOGAN" | lolcat 
+  msg -bar
+  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
+  tput cuu1 && tput dl1
+  echo -e "$slogan"
+  msg -bar
+  clear && clear
+
+mkdir /etc/VPS-MX >/dev/null 2>&1
+
+cd /etc/VPS-MX
+wget https://www.dropbox.com/s/0fefjta8wb14nli/VPS-MX.tar.xz >/dev/null 2>&1
+tar -xf VPS-MX.tar.xz >/dev/null 2>&1
+chmod +x VPS-MX.tar.xz >/dev/null 2>&1
+rm -rf VPS-MX.tar.xz
+cd
+chmod -R 755 /etc/VPS-MX
+rm -rf /etc/VPS-MX/MEUIPvps
+echo "/etc/VPS-MX/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+echo "/etc/VPS-MX/menu" >/usr/bin/VPSMX && chmod +x /usr/bin/VPSMX
+echo "$slogan" >/etc/VPS-MX/message.txt
+[[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
+[[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
+[[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
+[[ ! -d /usr/local/lib/ubuntn/apache/ver ]] && mkdir /usr/local/lib/ubuntn/apache/ver
+[[ ! -d /usr/share ]] && mkdir /usr/share
+[[ ! -d /usr/share/mediaptre ]] && mkdir /usr/share/mediaptre
+[[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
+[[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
+[[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
+[[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
+[[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
+[[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
+[[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
+cd
+[[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
+[[ ! -d /etc/VPS-MX/Slow ]] && mkdir /etc/VPS-MX/Slow
+[[ ! -d /etc/VPS-MX/Slow/install ]] && mkdir /etc/VPS-MX/Slow/install
+[[ ! -d /etc/VPS-MX/Slow/Key ]] && mkdir /etc/VPS-MX/Slow/Key
+msg -ama "               Estamos Finalizando la Instalación" && msg bar2
 install_fim () {
-msg -ama "               Finalizando Instalacion" && msg bar2
+msg -ama "               Hemos Finalizando Instalacion" && msg bar2
 #rm -rf /etc/VPS-MX/controlador/nombre.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/nombre.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/nombre.log &>/dev/null
 [[ $(find /etc/VPS-MX/controlador -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/VPS-MX/controlador/IDT.log https://github.com/NearVPN/VPSMXMOD/raw/master/ArchivosUtilitarios/IDT.log &>/dev/null
@@ -434,47 +426,31 @@ echo "exit 0" >> /etc/rc.local
 echo 'clear' >> .bashrc
 echo 'echo ""' >> .bashrc
 #
-echo 'figlet ":NEAR-MOD:"|lolcat' >> .bashrc
+echo 'rebootnb login >/dev/null 2>&1' >>.bashrc
+echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
+echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
+echo 'figlet -w 85 -f smslant "         SCRIPT
+     DANSMX"   | lolcat' >>.bashrc
+echo 'echo -e "\033[1;93m════════════════════════════════════════════════════" ' >>.bashrc
+echo 'echo -e "\033[1;31m————————————————————————————————————————————————————" ' >>.bashrc
 #echo 'echo "" '>> .bashrc
 echo 'mess1="$(less /etc/VPS-MX/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\t\033[92mRESELLER : $mess1 "'>> .bashrc
 echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"'>> .bashrc
 echo 'echo "" '>> .bashrc                                               
-echo 'echo -e "\t\033[97mPARA MOSTAR PANEL ESCRIBA: menu "'>> .bashrc
+echo 'echo -e "\t\033[97mPARA MOSTAR PANEL BASH ESCRIBA: sudo menu "'>> .bashrc
 
 echo 'echo ""'>> .bashrc
-#echo -e "       COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-#echo -e "                     \033[1;41m menu \033[0;37m" && msg -bar2
+echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+echo -e "  \033[1;41m               sudo menu             \033[0;37m" && msg -bar2
 rm -rf /usr/bin/pytransform &> /dev/null
 rm -rf VPS-MX.sh
 rm -rf lista-arq
 service ssh restart &>/dev/null
 #exit
 }
-ofus () {
-unset server
-server=$(echo ${txt_ofuscatw}|cut -d':' -f1)
-unset txtofus
-number=$(expr length $1)
-for((i=1; i<$number+1; i++)); do
-txt[$i]=$(echo "$1" | cut -b $i)
-case ${txt[$i]} in
-".")txt[$i]="C";;
-"C")txt[$i]=".";;
-"3")txt[$i]="@";;
-"@")txt[$i]="3";;
-"4")txt[$i]="9";;
-"9")txt[$i]="4";;
-"6")txt[$i]="P";;
-"P")txt[$i]="6";;
-"L")txt[$i]="K";;
-"K")txt[$i]="L";;
-esac
-txtofus+="${txt[$i]}"
-done
-echo "$txtofus" | rev
-}
+
 verificar_arq () {
 [[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
 [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
@@ -508,7 +484,7 @@ clear
 msg -bar
 #msg -ama "     [ VPS - MX - SCRIPT \033[1;97m MOD \033[1;33m ]"
 #msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)|@NearMod_Noty_bot "
+msg -ama " Notify-BOT (Notificasion Remota)|@notidansmxbot "
 msg -bar
 echo -e "\033[1;94m Notify-BOT es un simple notificador de:"
 echo -e "\033[1;94m >> Usuario Expirado"
@@ -516,8 +492,8 @@ echo -e "\033[1;94m >> Usuario Eliminado"
 echo -e "\033[1;94m >> Avisos de VPS Reiniciada"
 echo -e "\033[1;94m >> Avisos de Monitor de Protocolos"
 echo -e "\033[1;97m Inicie El BOT de Telegram"
-echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @NearVPS_bot"
-echo -e "\033[1;92m Aparecerá algo parecido 👤 → Tu ID es: 45145564   "
+echo -e "\033[1;92m ¡¡ Para sacar su ID entre al BOT @notidansmxbot"
+echo -e "\033[1;92m Aparesera algo parecido 👤 → Tu ID es: 45145564   "
 msg -bar
 echo -e "\033[1;93mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
 echo "${nombr}" > /etc/VPS-MX/controlador/nombre.log
@@ -533,7 +509,7 @@ NOM="$(less /etc/VPS-MX/controlador/nombre.log)"
 NOM1="$(echo $NOM)"
 IDB1=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
 IDB2=`echo $IDB1` > /dev/null 2>&1
-KEY="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
+KEY="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠
 👉 ►► IP: $Nip
@@ -542,11 +518,11 @@ MSG="⚠️ ►► AVISO DE VPS: $NOM1 ⚠
 curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
 echo -e "\033[1;34m            SE ENVIO MENSAJE DE PRUEBA "
 }
-fun_ipe
+
 wget -O /usr/bin/trans https://github.com/NearVPN/script/raw/master/Install/trans &> /dev/null
 wget -O /bin/Desbloqueo.sh https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
-wget -O /bin/monitor.sh https://github.com/NearVPN/VPSMXMOD/raw/master/Monitor-Service/monitor.sh &> /dev/null
+wget -O /bin/monitor.sh https://raw.githubusercontent.com/heshan3031/VPSMXMOD/master/Monitor-Service/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
 wget -O /var/www/html/estilos.css https://github.com/NearVPN/VPSMXMOD/raw/master/SCRIPT-8.4/Utilidad/estilos.css &> /dev/null
 [[ -f "/usr/sbin/ufw" ]] && ufw allow 443/tcp &>/dev/null; ufw allow 80/tcp &>/dev/null; ufw allow 3128/tcp &>/dev/null; ufw allow 8799/tcp &>/dev/null; ufw allow 8080/tcp &>/dev/null; ufw allow 81/tcp &>/dev/null
@@ -558,45 +534,7 @@ msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
 [[ ${#1} -gt 2 ]] && funcao_idioma || id="$1"
  }
-error_fun () {
-msg -bar2 && msg -verm "ERROR entre VPS<-->GENERADOR (Port 81 TCP)" && msg -bar2
-[[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}
-exit 1
-}
-invalid_key () {
-msg -bar2 && msg -verm "  Code Invalido -- #¡Key Invalida#! " && msg -bar2
-[[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq
-rm -rf lista-arq
-exit 1
-}
-while [[ ! $Key ]]; do
-msg -bar2 && msg -ne "\033[1;93m          >>> INGRESE SU KEY ABAJO <<<\n   \033[1;37m" && read Key
-tput cuu1 && tput dl1
-done
-msg -ne "    # Verificando Key # : "
-cd $HOME
-wget -O $HOME/lista-arq $(ofus "$Key")/$IP > /dev/null 2>&1 && echo -e "\033[1;32m Ofus Correcto" || {
-   echo -e "\033[1;91m Ofus Incorrecto"
-   invalid_key
-   exit
-   }
-IP=$(ofus "$Key" | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') && echo "$IP" > /usr/bin/venip
-#sleep 1s
-function_verify
-updatedb
-if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
-   msg -bar2
-   msg -verd "    Ficheros Copiados: \e[97m[\e[93m@NearVPS_bot\e[97m]"
-   REQUEST=$(ofus "$Key"|cut -d'/' -f2)
-   [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
-   pontos="." 
-   stopping="Descargando Ficheros"
-   for arqx in $(cat $HOME/lista-arq); do
-   msg -verm "${stopping}${pontos}" 
-   wget --no-check-certificate -O ${SCPinstal}/${arqx} ${IP}:81/${REQUEST}/${arqx} > /dev/null 2>&1 && verificar_arq "${arqx}" || error_fun
-   tput cuu1 && tput dl1
-   pontos+="."
-   done
+
    wget -qO- ifconfig.me > /etc/VPS-MX/IP.log
   userid="${SCPdir}/ID"
   if [[ ! -e ${userid} ]]; then
@@ -605,9 +543,9 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
 	id=$(cat ${userid})
 	 fi
   
- 		TOKEN="5538642678:AAFx1Jb0geEon7mpMnf_iV4f8cWOUo6Yzz0"
+ 		TOKEN="5733339829:AAHcQnzQSKMHK2Ev7cyMrY4PbAK51QHiTWc"
 			URL="https://api.telegram.org/bot$TOKEN/sendMessage"
-			MSG=" 👇= KEY INSTALADO =👇
+			MSG=" 👇= VPS INSTALADO =👇
 ╔═════ ▓▓ ࿇ ▓▓ ═════╗
  User ID: $id
  - - - - - - - ×∆× - - - - - - -
@@ -615,9 +553,11 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
  - - - - - - - ×∆× - - - - - - -
  IP: $(cat ${SCPdir}/IP.log)
  - - - - - - - ×∆× - - - - - - -
- KEY: $Key
+ 🌮🌵🇲🇽 BIENVENIDO 🇲🇽🌵🌮
  - - - - - - - ×∆× - - - - - - -
- By @Near365
+ By @DansBotMx
+ - - - - - - - ×∆× - - - - - - -
+ VPS ONLINE 🟢 ACTIVO
  - - - - - - - ×∆× - - - - - - -
 ╚═════ ▓▓ ࿇ ▓▓ ═════╝
 "
@@ -631,8 +571,8 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
    wget -O ${SCPdir}/tmp/monitor https://www.dropbox.com/s/1ql777rj718p3h1/monitor &>/dev/null
    wget -O ${SCPdir}/tmp/autodes https://www.dropbox.com/s/9ux7j9zgr4jrsr6/autodes &>/dev/null
    chmod 777 ${SCPdir}/tmp/*
-   #rm ${SCPdir}/ID &>/dev/null
-   #sleep 1s
+   rm ${SCPdir}/ID &>/dev/null
+   sleep 1s
    msg -bar2
    listaarqs="$(locate "lista-arq"|head -1)" && [[ -e ${listaarqs} ]] && rm $listaarqs   
    cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
@@ -645,26 +585,22 @@ curl -s --max-time 10 -d "chat_id=$id&disable_web_page_preview=1&text=$MSG" $URL
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
 
-#echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
-#   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @LaCasitaMx_Noty_Bot)"
-#   msg -bar2
-#   read -p " [ s | n ]: " NOTIFY   
-#   [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
+   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
+   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @notidansmxbot)"
+   msg -bar2
+   read -p " [ s | n ]: " NOTIFY   
+   [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
    msg -bar2
    [[ ${byinst} = "true" ]] && install_fim
    REBOOT=1
 REBOOT_TIMEOUT=10
 if [ "$REBOOT" = "1" ]; then
-echo -e "	    \e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
+echo -e "	\e[1;97m\e[1;100mREINICIANDO VPS EN 10 SEGUNDOS\e[0m"
 while [ $REBOOT_TIMEOUT -gt 0 ]; do
-print_center -ne "-$REBOOT_TIMEOUT-\r"
+msg -ne "	-$REBOOT_TIMEOUT-"
 sleep 1
 : $((REBOOT_TIMEOUT--))
 done
 reboot
-fi
-else
-invalid_key
-rm -rf VPS-MX.sh lista-arq
 fi
 rm -rf VPS-MX.sh lista-arq
