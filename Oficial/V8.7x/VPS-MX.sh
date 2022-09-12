@@ -1,16 +1,12 @@
 #!/bin/bash
 
 clear
-apt install lolcat -y &>/dev/null
-apt install figlet -y &>/dev/null
 if [ `whoami` != 'root' ]
 	then 
      echo -e "\e[1;31mPARA PODER USAR EL INSTALADOR ES NECESARIO SER ROOT\nAUN NO SABES COMO INICAR COMO ROOT?\nDIJITA ESTE COMANDO EN TU TERMINAL ( sudo -i )\e[0m" 
      rm *
      exit 
 fi
-tag="\033[0m"
-url='https://raw.githubusercontent.com/heshan3031/botsshzap/main/key'
 msg () {
 BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
 AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCOR='\e[0m'
@@ -328,23 +324,6 @@ sleep 7s
 clear
 }
 clear
-
-clear && clear
-  msg -bar
-  figlet "ADM-KEY" | lolcat 
-  msg -bar
-  echo -e "\033[1;97m POR FAVOR INTRODUCE UNA KEY VALIDA ABAJO"|lolcat
-  echo -e "\033[1;97m Necesitas una key contacta a @DansBotMx"|lolcat
-  echo ''
-  echo -ne "${verde}╰═════•➤${tag} ";
-  read key
-  
-[[ $(grep -wc $key <(wget -qO- $url)) == 0 ]] && {
-  sleep 3s
-  echo -e "${red}Code Invalido -- Key Invalida${tag}"
-  exit 1
-}
-
 clear
 
 msg -bar2
